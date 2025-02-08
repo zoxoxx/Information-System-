@@ -86,7 +86,25 @@ namespace Kursovik.Model
         }
 
 
-        public void ClientAdd(int type,string phone, string email, string pasword)
+        public static void ClientDelete(int client_id)
+        {
+            NpgsqlConnection connect = new NpgsqlConnection(DbConnection.connectionStr);
+            try
+            {
+                connect.Open();
+                string sqlExp = "call delete_client(@client_id)";
+                NpgsqlCommand cmd1 = new NpgsqlCommand(sqlExp, connect);
+                cmd1.Parameters.AddWithValue("client_id", client_id);
+                int i = cmd1.ExecuteNonQuery();
+                MessageBox.Show("Клиент был удален");
+                
+            }
+            catch (NpgsqlException ex)
+            { MessageBox.Show("Ошибка записи: " + ex.Message); return; }
+            connect.Close();
+        }
+
+        public void ClientAdd(int type, string phone, string email, string pasword)
         {
             NpgsqlConnection connect = new NpgsqlConnection(DbConnection.connectionStr);
             try
@@ -99,13 +117,15 @@ namespace Kursovik.Model
                 cmd1.Parameters.AddWithValue("emaill", email);
                 cmd1.Parameters.AddWithValue("typeId", type);
                 int i = cmd1.ExecuteNonQuery();
-               
-                
+
+
             }
             catch (NpgsqlException ex)
             { MessageBox.Show("Ошибка записи: " + ex.Message); return; }
             connect.Close();
         }
+
+
 
         public void PhysAdd(string passport,string datePassport, string surnamee, string namee, string patronymicc, string adres, int clientId)
         {
@@ -186,7 +206,7 @@ namespace Kursovik.Model
                     }
                     else
                     {
-                        MessageBox.Show("Нет такого пользователя");
+                        
                     }
 
 
@@ -222,7 +242,7 @@ namespace Kursovik.Model
                     }
                     else
                     {
-                        MessageBox.Show("Нет такого пользователя");
+                       
                     }
 
 
@@ -234,5 +254,71 @@ namespace Kursovik.Model
             { MessageBox.Show(ex.Message); return client; }
         }
 
+        public static void UpdateUrClient(string nameCompany, string companyAdress, int clientId)
+        {
+            
+            try
+            {
+                using (NpgsqlConnection connect = new NpgsqlConnection(DbConnection.connectionStr))
+                {
+                    connect.Open();
+
+                    string sqlExp = "call update_urid(@nameCompany, @companyAdress, @clientId)";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sqlExp, connect);
+                    cmd.Parameters.AddWithValue("nameCompany", nameCompany);
+                    cmd.Parameters.AddWithValue("companyAdress", companyAdress);
+                    cmd.Parameters.AddWithValue("clientId", clientId);
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                    
+
+
+                    
+                }
+            }
+            catch (NpgsqlException ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+
+
+        public static void UpdatePhysClient(string pasport, DateTime datePassport, string surnamee, string namee, string patronymicc, string adres, int clientId)
+        {
+
+            try
+            {
+                using (NpgsqlConnection connect = new NpgsqlConnection(DbConnection.connectionStr))
+                {
+                    connect.Open();
+
+                    string sqlExp = "call update_phys(@pasport, @datePassport, @surnamee, @namee, @patronymicc, @adres, @clientId)";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sqlExp, connect);
+                    cmd.Parameters.AddWithValue("pasport", pasport);
+                    cmd.Parameters.AddWithValue("datePassport", datePassport);
+                    cmd.Parameters.AddWithValue("surnamee", surnamee);
+                    cmd.Parameters.AddWithValue("namee", namee);
+                    cmd.Parameters.AddWithValue("patronymicc", patronymicc);
+                    cmd.Parameters.AddWithValue("adres", adres);
+                    cmd.Parameters.AddWithValue("clientId", clientId);
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+
+
+
+
+
+                }
+            }
+            catch (NpgsqlException ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+
+
     }
+
 }
+
+
+    
+
+

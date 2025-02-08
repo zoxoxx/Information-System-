@@ -45,12 +45,14 @@
             // 
             // btn_selectImage
             // 
+            this.btn_selectImage.BackColor = System.Drawing.Color.Pink;
+            this.btn_selectImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_selectImage.Location = new System.Drawing.Point(506, 151);
             this.btn_selectImage.Name = "btn_selectImage";
             this.btn_selectImage.Size = new System.Drawing.Size(98, 46);
             this.btn_selectImage.TabIndex = 1;
             this.btn_selectImage.Text = "Изменить фото";
-            this.btn_selectImage.UseVisualStyleBackColor = true;
+            this.btn_selectImage.UseVisualStyleBackColor = false;
             this.btn_selectImage.Click += new System.EventHandler(this.btn_selectImage_Click);
             // 
             // label1
@@ -64,9 +66,12 @@
             // 
             // tb_email
             // 
+            this.tb_email.BackColor = System.Drawing.Color.OrangeRed;
+            this.tb_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.tb_email.Location = new System.Drawing.Point(298, 97);
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(136, 22);
+            this.tb_email.Size = new System.Drawing.Size(136, 29);
             this.tb_email.TabIndex = 3;
             // 
             // label2
@@ -80,9 +85,12 @@
             // 
             // tb_surname
             // 
+            this.tb_surname.BackColor = System.Drawing.Color.OrangeRed;
+            this.tb_surname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.tb_surname.Location = new System.Drawing.Point(138, 258);
             this.tb_surname.Name = "tb_surname";
-            this.tb_surname.Size = new System.Drawing.Size(140, 22);
+            this.tb_surname.Size = new System.Drawing.Size(140, 29);
             this.tb_surname.TabIndex = 5;
             // 
             // label3
@@ -96,9 +104,12 @@
             // 
             // tb_name
             // 
+            this.tb_name.BackColor = System.Drawing.Color.OrangeRed;
+            this.tb_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.tb_name.Location = new System.Drawing.Point(298, 258);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(136, 22);
+            this.tb_name.Size = new System.Drawing.Size(136, 29);
             this.tb_name.TabIndex = 7;
             // 
             // label4
@@ -112,30 +123,37 @@
             // 
             // tb_patronymic
             // 
+            this.tb_patronymic.BackColor = System.Drawing.Color.OrangeRed;
+            this.tb_patronymic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.tb_patronymic.Location = new System.Drawing.Point(457, 258);
             this.tb_patronymic.Name = "tb_patronymic";
-            this.tb_patronymic.Size = new System.Drawing.Size(132, 22);
+            this.tb_patronymic.Size = new System.Drawing.Size(132, 29);
             this.tb_patronymic.TabIndex = 9;
             // 
             // btn_save
             // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_save.Location = new System.Drawing.Point(275, 325);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(180, 46);
             this.btn_save.TabIndex = 10;
             this.btn_save.Text = "Сохранить изменения";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.BackgroundImage = global::Kursovik.Properties.Resources.Arrow_2;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.Size = new System.Drawing.Size(102, 35);
             this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
@@ -151,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_save);
@@ -166,7 +185,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "ProfileSotrudnik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProfileSotrudnik";
+            this.Text = "Профиль сотрудника";
             this.Load += new System.EventHandler(this.ProfileSotrudnik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

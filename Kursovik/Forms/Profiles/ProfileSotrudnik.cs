@@ -33,9 +33,6 @@ namespace Kursovik.Forms.Profiles
             tb_name.Text = Authorisation.currentUser.name;
             tb_surname.Text = Authorisation.currentUser.surname;
             tb_patronymic.Text = Authorisation.currentUser.patronymic;
-
-
-
         }
 
         private void btn_selectImage_Click(object sender, EventArgs e)
@@ -56,7 +53,6 @@ namespace Kursovik.Forms.Profiles
                 MessageBox.Show(exactPath);
 
                 File.Copy(imagePath, exactPath, true);
-                
             }
             checkCnangePhoto = true;
 

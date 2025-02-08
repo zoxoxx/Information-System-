@@ -141,18 +141,21 @@
             // 
             // btn_endReg
             // 
+            this.btn_endReg.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_endReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_endReg.Location = new System.Drawing.Point(282, 337);
             this.btn_endReg.Name = "btn_endReg";
             this.btn_endReg.Size = new System.Drawing.Size(223, 51);
             this.btn_endReg.TabIndex = 12;
             this.btn_endReg.Text = "Завершить регистрацию";
-            this.btn_endReg.UseVisualStyleBackColor = true;
+            this.btn_endReg.UseVisualStyleBackColor = false;
             this.btn_endReg.Click += new System.EventHandler(this.btn_endReg_Click);
             // 
             // RegistrationUr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Tomato;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_endReg);
             this.Controls.Add(this.tb_podPas);
@@ -169,7 +172,7 @@
             this.Controls.Add(this.tb_nameCompany);
             this.Name = "RegistrationUr";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistrationUr";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

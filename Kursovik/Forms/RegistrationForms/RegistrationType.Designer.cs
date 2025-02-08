@@ -35,22 +35,26 @@
             // 
             // btn_physReg
             // 
+            this.btn_physReg.BackColor = System.Drawing.Color.Maroon;
+            this.btn_physReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_physReg.Location = new System.Drawing.Point(52, 138);
             this.btn_physReg.Name = "btn_physReg";
             this.btn_physReg.Size = new System.Drawing.Size(122, 53);
             this.btn_physReg.TabIndex = 0;
             this.btn_physReg.Text = "Физическое лицо";
-            this.btn_physReg.UseVisualStyleBackColor = true;
+            this.btn_physReg.UseVisualStyleBackColor = false;
             this.btn_physReg.Click += new System.EventHandler(this.btn_physReg_Click);
             // 
             // btn_urReg
             // 
+            this.btn_urReg.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_urReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_urReg.Location = new System.Drawing.Point(312, 138);
             this.btn_urReg.Name = "btn_urReg";
             this.btn_urReg.Size = new System.Drawing.Size(122, 53);
             this.btn_urReg.TabIndex = 1;
             this.btn_urReg.Text = "Юридическое лицо";
-            this.btn_urReg.UseVisualStyleBackColor = true;
+            this.btn_urReg.UseVisualStyleBackColor = false;
             this.btn_urReg.Click += new System.EventHandler(this.btn_urReg_Click);
             // 
             // label1
@@ -66,6 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(525, 231);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_urReg);

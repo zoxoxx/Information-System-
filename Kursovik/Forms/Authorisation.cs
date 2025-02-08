@@ -21,7 +21,7 @@ namespace Kursovik
         public static User currentUser { get; set; } = null;
         public static Physical_Client physical_Client { get; set; } = null;
         public static Uridich_Client uridich_Client { get; set;} = null;
-        ClientFromDb clientFromDb = new ClientFromDb();
+       public static ClientFromDb clientFromDb = new ClientFromDb();
         public Authorisation()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace Kursovik
                             physical_Client = clientFromDb.GetPhysClient(currentClient.clientid);
                             if (physical_Client != null)
                             {
-                                MainFormCP vhod = new MainFormCP();
+                                MainFormCPhys vhod = new MainFormCPhys();
                                 this.Hide();
                                 vhod.Show();
                             }
