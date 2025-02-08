@@ -32,7 +32,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon_archive.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.4.5.0\lib\net48\MailKit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -47,6 +60,9 @@
     </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.5.0\lib\net48\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
@@ -84,6 +100,9 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -94,6 +113,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
     </Reference>
@@ -128,9 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Autorization.cs" />
+    <Compile Include="Classes\availability.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Document.cs" />
+    <Compile Include="Classes\document_category.cs" />
+    <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Physical_Client.cs" />
+    <Compile Include="Classes\privacy.cs" />
+    <Compile Include="Classes\typeClient.cs" />
+    <Compile Include="Classes\type_document.cs" />
     <Compile Include="Classes\Uridich_Client.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\Authorisation.cs">
@@ -139,17 +165,35 @@
     <Compile Include="Forms\Authorisation.Designer.cs">
       <DependentUpon>Authorisation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MagazineAutorization.cs">
+    <Compile Include="Forms\Categorys\AddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MagazineAutorization.Designer.cs">
-      <DependentUpon>MagazineAutorization.cs</DependentUpon>
+    <Compile Include="Forms\Categorys\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainFormCP.cs">
+    <Compile Include="Forms\Categorys\ChangeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainFormCP.Designer.cs">
-      <DependentUpon>MainFormCP.cs</DependentUpon>
+    <Compile Include="Forms\Categorys\ChangeCategory.Designer.cs">
+      <DependentUpon>ChangeCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Categorys\Choice_category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Categorys\Choice_category.Designer.cs">
+      <DependentUpon>Choice_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docs\ChangeDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docs\ChangeDocument.Designer.cs">
+      <DependentUpon>ChangeDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docs\Documents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Docs\Documents.Designer.cs">
+      <DependentUpon>Documents.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainFormCU.cs">
       <SubType>Form</SubType>
@@ -157,29 +201,47 @@
     <Compile Include="Forms\MainFormCU.Designer.cs">
       <DependentUpon>MainFormCU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainFormCPhys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainFormCPhys.Designer.cs">
+      <DependentUpon>MainFormCPhys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainFormS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainFormS.Designer.cs">
       <DependentUpon>MainFormS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MyMessageBox.cs">
+    <Compile Include="Forms\Orders\OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MyMessageBox.Designer.cs">
-      <DependentUpon>MyMessageBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OrdersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OrdersForm.Designer.cs">
+    <Compile Include="Forms\Orders\OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders\AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profiles\ProfilePC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profiles\ProfilePC.Designer.cs">
+      <DependentUpon>ProfilePC.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Profiles\ProfileSotrudnik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Profiles\ProfileSotrudnik.Designer.cs">
       <DependentUpon>ProfileSotrudnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profiles\ProfileUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profiles\ProfileUC.Designer.cs">
+      <DependentUpon>ProfileUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegistrationForms\RegistrationPhys.cs">
       <SubType>Form</SubType>
@@ -200,31 +262,59 @@
       <DependentUpon>RegistrationUr.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AutorizationMagazineFromDb.cs" />
+    <Compile Include="Model\AvailabilityDocFromDb.cs" />
+    <Compile Include="Model\CategoryDocFromDb.cs" />
     <Compile Include="Model\ClientFromDb.cs" />
     <Compile Include="Model\DbConnection.cs" />
+    <Compile Include="Model\DocumentFromDb.cs" />
+    <Compile Include="Model\OrderFromDb.cs" />
+    <Compile Include="Model\PrivacyFromDb.cs" />
+    <Compile Include="Model\TypeClientFromDb.cs" />
+    <Compile Include="Model\TypeDocFromDb.cs" />
     <Compile Include="Model\UserFromDb.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Authorisation.resx">
       <DependentUpon>Authorisation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MagazineAutorization.resx">
-      <DependentUpon>MagazineAutorization.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Categorys\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categorys\ChangeCategory.resx">
+      <DependentUpon>ChangeCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categorys\Choice_category.resx">
+      <DependentUpon>Choice_category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docs\ChangeDocument.resx">
+      <DependentUpon>ChangeDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docs\Documents.resx">
+      <DependentUpon>Documents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainFormCU.resx">
       <DependentUpon>MainFormCU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainFormCPhys.resx">
+      <DependentUpon>MainFormCPhys.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainFormS.resx">
       <DependentUpon>MainFormS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MyMessageBox.resx">
-      <DependentUpon>MyMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrdersForm.resx">
+    <EmbeddedResource Include="Forms\Orders\OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profiles\ProfilePC.resx">
+      <DependentUpon>ProfilePC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Profiles\ProfileSotrudnik.resx">
       <DependentUpon>ProfileSotrudnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profiles\ProfileUC.resx">
+      <DependentUpon>ProfileUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistrationForms\RegistrationPhys.resx">
       <DependentUpon>RegistrationPhys.cs</DependentUpon>
@@ -275,6 +365,8 @@
     <None Include="Resources\editProfil.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="Resources\icon_archive.ico" />
     <Content Include="Images\picture.jpg" />
     <Content Include="Images\user1.jpg" />
     <Content Include="Images\user2.jpg" />

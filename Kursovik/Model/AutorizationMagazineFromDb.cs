@@ -31,6 +31,26 @@ namespace Kursovik.Model
         }
 
 
+        public static void clearAuthorization()
+        {
+            NpgsqlConnection connect = new NpgsqlConnection(DbConnection.connectionStr);
+            try
+            {
+                connect.Open();
+                string sqlExp = "call clearAuthorization()";
+                NpgsqlCommand cmd1 = new NpgsqlCommand(sqlExp, connect);
+                
+                int i = cmd1.ExecuteNonQuery();
+
+
+            }
+            catch (NpgsqlException ex)
+            { MessageBox.Show("Ошибка очистки: " + ex.Message); return; }
+            connect.Close();
+        }
+
+
+
         public static List<Autorization> getEntrances()
         {
             List<Autorization> auto = new List<Autorization>();

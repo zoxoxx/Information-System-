@@ -1,6 +1,6 @@
 ﻿namespace Kursovik.Forms
 {
-    partial class MainFormCU
+    partial class MainFormCPhys
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dg_urdoc = new System.Windows.Forms.DataGridView();
+            this.dg_physdoc = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьПрофильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиИзСистемыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_category = new System.Windows.Forms.ComboBox();
+            this.cmb_availability = new System.Windows.Forms.ComboBox();
+            this.txbsearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +50,15 @@
             this.filepath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.privacy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.create = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_urdoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_physdoc)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dg_urdoc
+            // dg_physdoc
             // 
-            this.dg_urdoc.BackgroundColor = System.Drawing.Color.IndianRed;
-            this.dg_urdoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_urdoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dg_physdoc.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dg_physdoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_physdoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.creator,
             this.category,
@@ -64,23 +70,23 @@
             this.filepath,
             this.privacy,
             this.create});
-            this.dg_urdoc.GridColor = System.Drawing.Color.Firebrick;
-            this.dg_urdoc.Location = new System.Drawing.Point(0, 113);
-            this.dg_urdoc.Name = "dg_urdoc";
-            this.dg_urdoc.RowHeadersWidth = 51;
-            this.dg_urdoc.RowTemplate.Height = 24;
-            this.dg_urdoc.Size = new System.Drawing.Size(800, 265);
-            this.dg_urdoc.TabIndex = 0;
+            this.dg_physdoc.Location = new System.Drawing.Point(-1, 113);
+            this.dg_physdoc.Name = "dg_physdoc";
+            this.dg_physdoc.RowHeadersWidth = 51;
+            this.dg_physdoc.RowTemplate.Height = 24;
+            this.dg_physdoc.Size = new System.Drawing.Size(800, 265);
+            this.dg_physdoc.TabIndex = 1;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Yellow;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fIOToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fIOToolStripMenuItem
@@ -109,14 +115,67 @@
             this.выйтиИзСистемыToolStripMenuItem.Name = "выйтиИзСистемыToolStripMenuItem";
             this.выйтиИзСистемыToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.выйтиИзСистемыToolStripMenuItem.Text = "Выйти из системы";
-            this.выйтиИзСистемыToolStripMenuItem.Click += new System.EventHandler(this.выйтиИзСистемыToolStripMenuItem_Click_1);
+            this.выйтиИзСистемыToolStripMenuItem.Click += new System.EventHandler(this.выйтиИзСистемыToolStripMenuItem_Click);
+            // 
+            // cmb_category
+            // 
+            this.cmb_category.FormattingEnabled = true;
+            this.cmb_category.Location = new System.Drawing.Point(86, 76);
+            this.cmb_category.Name = "cmb_category";
+            this.cmb_category.Size = new System.Drawing.Size(121, 24);
+            this.cmb_category.TabIndex = 8;
+            this.cmb_category.SelectedIndexChanged += new System.EventHandler(this.cmb_category_SelectedIndexChanged);
+            // 
+            // cmb_availability
+            // 
+            this.cmb_availability.FormattingEnabled = true;
+            this.cmb_availability.Location = new System.Drawing.Point(317, 77);
+            this.cmb_availability.Name = "cmb_availability";
+            this.cmb_availability.Size = new System.Drawing.Size(121, 24);
+            this.cmb_availability.TabIndex = 9;
+            this.cmb_availability.SelectedIndexChanged += new System.EventHandler(this.cmb_availability_SelectedIndexChanged);
+            // 
+            // txbsearch
+            // 
+            this.txbsearch.Location = new System.Drawing.Point(588, 78);
+            this.txbsearch.Name = "txbsearch";
+            this.txbsearch.Size = new System.Drawing.Size(184, 22);
+            this.txbsearch.TabIndex = 10;
+            this.txbsearch.TextChanged += new System.EventHandler(this.txbsearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Категория";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(235, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Наличие";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(529, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Поиск";
             // 
             // name
             // 
             this.name.HeaderText = "Наименование";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 125;
+            this.name.Width = 110;
             // 
             // creator
             // 
@@ -144,7 +203,7 @@
             this.bookshell.HeaderText = "Полка";
             this.bookshell.MinimumWidth = 6;
             this.bookshell.Name = "bookshell";
-            this.bookshell.Width = 70;
+            this.bookshell.Width = 50;
             // 
             // row
             // 
@@ -159,14 +218,14 @@
             this.documentid.MinimumWidth = 6;
             this.documentid.Name = "documentid";
             this.documentid.Visible = false;
-            this.documentid.Width = 125;
+            this.documentid.Width = 10;
             // 
             // type
             // 
             this.type.HeaderText = "Тип";
             this.type.MinimumWidth = 6;
             this.type.Name = "type";
-            this.type.Width = 125;
+            this.type.Width = 95;
             // 
             // filepath
             // 
@@ -189,21 +248,27 @@
             this.create.HeaderText = "Дата создания";
             this.create.MinimumWidth = 6;
             this.create.Name = "create";
-            this.create.Width = 125;
+            this.create.Width = 90;
             // 
-            // MainFormCU
+            // MainFormCPhys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbsearch);
+            this.Controls.Add(this.cmb_availability);
+            this.Controls.Add(this.cmb_category);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dg_urdoc);
-            this.Name = "MainFormCU";
+            this.Controls.Add(this.dg_physdoc);
+            this.Name = "MainFormCPhys";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Главная форма юридического лица";
-            this.Load += new System.EventHandler(this.MainFormCP_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_urdoc)).EndInit();
+            this.Text = "Главная форма физического клиента";
+            this.Load += new System.EventHandler(this.MainFormCU_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_physdoc)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -213,11 +278,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dg_urdoc;
+        private System.Windows.Forms.DataGridView dg_physdoc;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьПрофильToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиИзСистемыToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmb_category;
+        private System.Windows.Forms.ComboBox cmb_availability;
+        private System.Windows.Forms.TextBox txbsearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn creator;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;

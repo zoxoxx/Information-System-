@@ -1,6 +1,6 @@
-﻿namespace Kursovik.Forms
+﻿namespace Kursovik.Forms.Orders
 {
-    partial class MainFormCU
+    partial class AddOrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dg_urdoc = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьПрофильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выйтиИзСистемыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dg_orders = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +41,14 @@
             this.filepath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.privacy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.create = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_urdoc)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_orders)).BeginInit();
             this.SuspendLayout();
             // 
-            // dg_urdoc
+            // dg_orders
             // 
-            this.dg_urdoc.BackgroundColor = System.Drawing.Color.IndianRed;
-            this.dg_urdoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_urdoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dg_orders.BackgroundColor = System.Drawing.Color.White;
+            this.dg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.creator,
             this.category,
@@ -64,66 +60,37 @@
             this.filepath,
             this.privacy,
             this.create});
-            this.dg_urdoc.GridColor = System.Drawing.Color.Firebrick;
-            this.dg_urdoc.Location = new System.Drawing.Point(0, 113);
-            this.dg_urdoc.Name = "dg_urdoc";
-            this.dg_urdoc.RowHeadersWidth = 51;
-            this.dg_urdoc.RowTemplate.Height = 24;
-            this.dg_urdoc.Size = new System.Drawing.Size(800, 265);
-            this.dg_urdoc.TabIndex = 0;
+            this.dg_orders.GridColor = System.Drawing.Color.White;
+            this.dg_orders.Location = new System.Drawing.Point(33, 94);
+            this.dg_orders.Name = "dg_orders";
+            this.dg_orders.RowHeadersWidth = 51;
+            this.dg_orders.RowTemplate.Height = 24;
+            this.dg_orders.Size = new System.Drawing.Size(842, 265);
+            this.dg_orders.TabIndex = 1;
+            this.dg_orders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_orders_CellDoubleClick);
             // 
-            // menuStrip1
+            // label1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fIOToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fIOToolStripMenuItem
-            // 
-            this.fIOToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.fIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.редактироватьПрофильToolStripMenuItem,
-            this.выйтиИзСистемыToolStripMenuItem});
-            this.fIOToolStripMenuItem.Image = global::Kursovik.Properties.Resources.profil;
-            this.fIOToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.fIOToolStripMenuItem.Name = "fIOToolStripMenuItem";
-            this.fIOToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.fIOToolStripMenuItem.Text = "FIO";
-            // 
-            // редактироватьПрофильToolStripMenuItem
-            // 
-            this.редактироватьПрофильToolStripMenuItem.Image = global::Kursovik.Properties.Resources.editProfil;
-            this.редактироватьПрофильToolStripMenuItem.Name = "редактироватьПрофильToolStripMenuItem";
-            this.редактироватьПрофильToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.редактироватьПрофильToolStripMenuItem.Text = "Редактировать профиль";
-            this.редактироватьПрофильToolStripMenuItem.Click += new System.EventHandler(this.редактироватьПрофильToolStripMenuItem_Click);
-            // 
-            // выйтиИзСистемыToolStripMenuItem
-            // 
-            this.выйтиИзСистемыToolStripMenuItem.Image = global::Kursovik.Properties.Resources.exit;
-            this.выйтиИзСистемыToolStripMenuItem.Name = "выйтиИзСистемыToolStripMenuItem";
-            this.выйтиИзСистемыToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.выйтиИзСистемыToolStripMenuItem.Text = "Выйти из системы";
-            this.выйтиИзСистемыToolStripMenuItem.Click += new System.EventHandler(this.выйтиИзСистемыToolStripMenuItem_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
+            this.label1.Location = new System.Drawing.Point(26, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(859, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Выберите документ который необходимо добавить в заказ";
             // 
             // name
             // 
             this.name.HeaderText = "Наименование";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 125;
+            this.name.Width = 120;
             // 
             // creator
             // 
             this.creator.HeaderText = "Автор";
             this.creator.MinimumWidth = 6;
             this.creator.Name = "creator";
-            this.creator.Width = 125;
             // 
             // category
             // 
@@ -191,21 +158,18 @@
             this.create.Name = "create";
             this.create.Width = 125;
             // 
-            // MainFormCU
+            // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dg_urdoc);
-            this.Name = "MainFormCU";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Главная форма юридического лица";
-            this.Load += new System.EventHandler(this.MainFormCP_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_urdoc)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.BackColor = System.Drawing.Color.Cyan;
+            this.ClientSize = new System.Drawing.Size(907, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dg_orders);
+            this.Name = "AddOrderForm";
+            this.Text = "AddOrderForm";
+            this.Load += new System.EventHandler(this.AddOrderForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_orders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,11 +177,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dg_urdoc;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fIOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьПрофильToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выйтиИзСистемыToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dg_orders;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn creator;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;

@@ -14,7 +14,6 @@ namespace Kursovik.Forms
 {
     public partial class RegistrationUr : Form
     {
-        MyMessageBox myMessageBox = new MyMessageBox();
         ClientFromDb clientFromDb = new ClientFromDb();
         public static Client currentClient { get; set; } = null;
         public RegistrationUr()
@@ -40,12 +39,12 @@ namespace Kursovik.Forms
                 }
                 else
                 {
-                    myMessageBox.Show("Пароли не совпадают!");
+                    MessageBox.Show("Пароли не совпадают!");
                 }
             }
             else
             {
-                myMessageBox.Show("Не все поля заполнены!");
+                MessageBox.Show("Не все поля заполнены!");
             }
         }
     }
